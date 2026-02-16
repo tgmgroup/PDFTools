@@ -26,6 +26,7 @@ const SUPPORTED_LANGUAGES = [
   'fr',
   'pt',
   'nl',
+  'da',
 ] as const;
 const LANG_REGEX = new RegExp(
   `^/(${SUPPORTED_LANGUAGES.join('|')})(?:/(.*))?$`
@@ -292,6 +293,9 @@ export default defineConfig(() => {
         context: {
           baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
           simpleMode: process.env.SIMPLE_MODE === 'true',
+          brandName: process.env.VITE_BRAND_NAME || '',
+          brandLogo: process.env.VITE_BRAND_LOGO || '',
+          footerText: process.env.VITE_FOOTER_TEXT || '',
         },
       }),
       languageRouterPlugin(),
@@ -333,6 +337,7 @@ export default defineConfig(() => {
     ],
     define: {
       __SIMPLE_MODE__: JSON.stringify(process.env.SIMPLE_MODE === 'true'),
+      __BRAND_NAME__: JSON.stringify(process.env.VITE_BRAND_NAME || ''),
     },
     resolve: {
       alias: {
@@ -405,6 +410,7 @@ export default defineConfig(() => {
           'header-footer': resolve(__dirname, 'src/pages/header-footer.html'),
           'invert-colors': resolve(__dirname, 'src/pages/invert-colors.html'),
           'scanner-effect': resolve(__dirname, 'src/pages/scanner-effect.html'),
+          'pdf-workflow': resolve(__dirname, 'src/pages/pdf-workflow.html'),
           'adjust-colors': resolve(__dirname, 'src/pages/adjust-colors.html'),
           'background-color': resolve(
             __dirname,
