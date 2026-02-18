@@ -1,0 +1,365 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "当サイトについて",
+    "contact": "お問い合わせ",
+    "licensing": "ライセンス",
+    "allTools": "すべてのツール",
+    "openMainMenu": "メインメニューを開く",
+    "language": "言語"
+  },
+  "donation": {
+    "message": "PDFツールを気に入っていただけましたか？無料かつオープンソースで提供し続けるために、ご支援をお願いします！",
+    "button": "寄付する"
+  },
+  "hero": {
+    "title": "プライバシーを重視した",
+    "pdfToolkit": "PDFツールキット",
+    "builtForPrivacy": "プライバシー第一",
+    "noSignups": "会員登録不要",
+    "unlimitedUse": "無制限に使用可能",
+    "worksOffline": "オフライン対応",
+    "startUsing": "今すぐ利用する"
+  },
+  "usedBy": {
+    "title": "以下の企業や組織の人々に利用されています"
+  },
+  "features": {
+    "title": "なぜ",
+    "bentoPdf": "PDFツールが選ばれるのか？",
+    "noSignup": {
+      "title": "会員登録不要",
+      "description": "アカウントやメールアドレスは不要。すぐに始められます。"
+    },
+    "noUploads": {
+      "title": "アップロードなし",
+      "description": "100% クライアントサイド処理。ファイルがデバイスから離れることはありません。"
+    },
+    "foreverFree": {
+      "title": "永久無料",
+      "description": "すべてのツールを無料で提供。試用期間や有料プランもありません。"
+    },
+    "noLimits": {
+      "title": "制限なし",
+      "description": "使用回数の制限なし。隠れた上限もありません。"
+    },
+    "batchProcessing": {
+      "title": "一括処理",
+      "description": "無制限のPDFファイルを一度に処理できます。"
+    },
+    "lightningFast": {
+      "title": "超高速",
+      "description": "待ち時間や遅延なしで、PDFを瞬時に処理します。"
+    }
+  },
+  "tools": {
+    "title": "利用を開始する",
+    "toolsLabel": "ツール",
+    "subtitle": "ツールをクリックしてファイルアップローダーを開いてください",
+    "searchPlaceholder": "ツールを検索（例：'分割', '整理'など）",
+    "backToTools": "ツール一覧に戻る",
+    "firstLoadNotice": "初回起動時は変換エンジンのダウンロードに時間がかかる場合があります。その後は即座に起動します。"
+  },
+  "upload": {
+    "clickToSelect": "クリックしてファイルを選択",
+    "orDragAndDrop": "またはドラッグ＆ドロップ",
+    "pdfOrImages": "PDFまたは画像",
+    "filesNeverLeave": "ファイルがデバイス外に送信されることはありません。",
+    "addMore": "ファイルを追加",
+    "clearAll": "すべて消去",
+    "clearFiles": "ファイルをクリア",
+    "hints": {
+      "singlePdf": "単一のPDFファイル",
+      "pdfFile": "PDFファイル",
+      "multiplePdfs2": "複数のPDFファイル（2つ以上）",
+      "bmpImages": "BMP画像",
+      "oneOrMorePdfs": "1つ以上のPDFファイル",
+      "pdfDocuments": "PDFドキュメント",
+      "oneOrMoreCsv": "1つ以上のCSVファイル",
+      "multiplePdfsSupported": "複数PDF対応",
+      "singleOrMultiplePdfs": "単一または複数のPDFファイルに対応",
+      "singlePdfFile": "単一のPDFファイル",
+      "pdfWithForms": "フォームフィールド付きのPDF",
+      "heicImages": "HEIC/HEIF画像",
+      "jpgImages": "JPG, JPEG, JP2, JPX画像",
+      "pdfsOrImages": "PDFまたは画像",
+      "oneOrMoreOdt": "1つ以上のODTファイル",
+      "singlePdfOnly": "単一のPDFファイルのみ",
+      "pdfFiles": "PDFファイル",
+      "multiplePdfs": "複数のPDFファイル",
+      "pngImages": "PNG画像",
+      "pdfFilesOneOrMore": "PDFファイル（1つ以上）",
+      "oneOrMoreRtf": "1つ以上のRTFファイル",
+      "svgGraphics": "SVGグラフィックス",
+      "tiffImages": "TIFF画像",
+      "webpImages": "WebP画像"
+    }
+  },
+  "howItWorks": {
+    "title": "使い方",
+    "step1": "ファイルをクリックまたはドラッグ＆ドロップして開始",
+    "step2": "処理ボタンをクリックして実行",
+    "step3": "処理されたファイルを即座に保存"
+  },
+  "relatedTools": {
+    "title": "関連PDFツール"
+  },
+  "loader": {
+    "processing": "処理中..."
+  },
+  "alert": {
+    "title": "アラート",
+    "ok": "OK"
+  },
+  "preview": {
+    "title": "ドキュメントプレビュー",
+    "downloadAsPdf": "PDFとしてダウンロード",
+    "close": "閉じる"
+  },
+  "settings": {
+    "title": "設定",
+    "shortcuts": "ショートカット",
+    "preferences": "基本設定",
+    "displayPreferences": "表示設定",
+    "searchShortcuts": "ショートカットを検索...",
+    "shortcutsInfo": "キーを長押ししてショートカットを設定します。変更は自動保存されます。",
+    "shortcutsWarning": "⚠️ ブラウザ共通のショートカット（Cmd/Ctrl+W, T, Nなど）は正しく動作しない可能性があるため、避けてください。",
+    "import": "インポート",
+    "export": "エクスポート",
+    "resetToDefaults": "デフォルトに戻す",
+    "fullWidthMode": "フルワイドモード",
+    "fullWidthDescription": "ツールを中央に配置せず、画面の全幅を使用します",
+    "settingsAutoSaved": "設定は自動的に保存されます",
+    "clickToSet": "クリックして設定",
+    "pressKeys": "キーを押してください...",
+    "warnings": {
+      "alreadyInUse": "このショートカットは既に使用されています",
+      "assignedTo": "は既に以下に割り当てられています：",
+      "chooseDifferent": "別のショートカットを選択してください。",
+      "reserved": "予約済みショートカットの警告",
+      "commonlyUsed": "は一般的に以下の用途で使用されます：",
+      "unreliable": "このショートカットは正しく動作しないか、ブラウザ/システムと競合する可能性があります。",
+      "useAnyway": "そのまま使用しますか？",
+      "resetTitle": "ショートカットのリセット",
+      "resetMessage": "すべてのショートカットをデフォルトに戻してもよろしいですか？<br><br>この操作は取り消せません。",
+      "importSuccessTitle": "インポート成功",
+      "importSuccessMessage": "ショートカットが正常にインポートされました！",
+      "importFailTitle": "インポート失敗",
+      "importFailMessage": "インポートに失敗しました。無効なファイル形式です。"
+    }
+  },
+  "warning": {
+    "title": "警告",
+    "cancel": "キャンセル",
+    "proceed": "続行"
+  },
+  "compliance": {
+    "title": "データがデバイスから離れることはありません",
+    "weKeep": "世界的なセキュリティ基準に準拠し、",
+    "yourInfoSafe": "情報を安全に保護します",
+    "byFollowingStandards": "。すべての処理は",
+    "processingLocal": "デバイス上でローカルに行われます。",
+    "gdpr": {
+      "title": "GDPR準拠",
+      "description": "欧州連合内の個人の個人データとプライバシーを保護します。"
+    },
+    "ccpa": {
+      "title": "CCPA準拠",
+      "description": "カリフォルニア州居住者に、個人情報の収集・使用・共有方法に関する権利を与えます。"
+    },
+    "hipaa": {
+      "title": "HIPAA準拠",
+      "description": "米国のヘルスケアシステムにおける機密性の高い健康情報の取り扱いに関する保護策を定めています。"
+    }
+  },
+  "faq": {
+    "title": "よくある",
+    "questions": "質問",
+    "sectionTitle": "よくある質問 (FAQ)",
+    "isFree": {
+      "question": "PDFツールは本当に無料ですか？",
+      "answer": "はい、完全に無料です。PDFツールのすべてのツールは、ファイル制限なし、登録不要、透かしなしで利用可能です。私たちは、誰もが支払いなしでシンプルかつ強力なPDFツールを利用できるべきだと考えています。"
+    },
+    "areFilesSecure": {
+      "question": "ファイルのセキュリティは安全ですか？どこで処理されますか？",
+      "answer": "ファイルはあなたのコンピュータから離れないため、非常に安全です。すべての処理はウェブブラウザ内（クライアントサイド）で行われます。ファイルをサーバーにアップロードすることはないため、完全なプライバシーと管理を維持できます。"
+    },
+    "platforms": {
+      "question": "Mac、Windows、モバイルで動作しますか？",
+      "answer": "はい。PDFツールはブラウザ上で動作するため、Windows、macOS、Linux、iOS、Androidを含む、最新のウェブブラウザを搭載したすべてのOSで動作します。"
+    },
+    "gdprCompliant": {
+      "question": "PDFツールはGDPRに準拠していますか？",
+      "answer": "はい。PDFツールはGDPRに完全に準拠しています。すべての処理はブラウザ内でローカルに行われ、ファイルをサーバーに送信・収集することはないため、私たちはあなたのデータにアクセスできません。"
+    },
+    "dataStorage": {
+      "question": "ファイルを保存したり追跡したりしますか？",
+      "answer": "いいえ。ファイルの保存、追跡、ログ記録は一切行いません。PDFツールで行うすべての操作はブラウザのメモリ内で行われ、ページを閉じると消滅します。サーバー、アップロード、履歴ログは一切関与しません。"
+    },
+    "different": {
+      "question": "PDFツールと他のツールの違いは何ですか？",
+      "answer": "ほとんどのPDFツールはファイルをサーバーにアップロードして処理しますが、PDFツールはそれを一切行いません。最新のウェブ技術を使用してブラウザ内で直接処理するため、高速なパフォーマンスと強力なプライバシーを実現しています。"
+    },
+    "browserBased": {
+      "question": "ブラウザベースの処理が安全な理由は何ですか？",
+      "answer": "すべての処理をブラウザ内で完結させることで、ファイルがデバイスから流出するのを防ぎます。これにより、サーバーハック、データ漏洩、不正アクセスのリスクを排除できます。ファイルは常にあなたのものです。"
+    },
+    "analytics": {
+      "question": "クッキーや解析ツールで追跡されますか？",
+      "answer": "私たちはプライバシーを尊重します。個人情報の追跡は行いません。匿名の訪問者数を把握するためにSimple Analyticsを使用していますが、ユーザーを特定することはありません。Simple AnalyticsはGDPRに完全に準拠しており、プライバシーを保護します。"
+    }
+  },
+  "testimonials": {
+    "title": "ユーザーの",
+    "users": "声",
+    "say": ""
+  },
+  "support": {
+    "title": "開発を支援する",
+    "description": "PDFツールは、すべての人に無料かつ安全なPDFツールキットを提供するための個人プロジェクトです。もし役に立ったなら、開発のサポートを検討してください。コーヒー1杯の支援が励みになります！",
+    "buyMeCoffee": "Buy Me a Coffee"
+  },
+  "footer": {
+    "copyright": "© 2026 PDFツール. All rights reserved.",
+    "version": "バージョン",
+    "company": "運営",
+    "aboutUs": "当サイトについて",
+    "faqLink": "よくある質問",
+    "contactUs": "お問い合わせ",
+    "legal": "法的情報",
+    "termsAndConditions": "利用規約",
+    "privacyPolicy": "プライバシーポリシー",
+    "followUs": "フォローする"
+  },
+  "merge": {
+    "title": "PDFを結合",
+    "description": "ファイル全体を結合、または特定のページを選択して新しいドキュメントを作成します。",
+    "fileMode": "ファイルモード",
+    "pageMode": "ページモード",
+    "howItWorks": "使い方:",
+    "fileModeInstructions": [
+      "アイコンをドラッグしてファイルの順番を変更できます。",
+      "各ファイルの「ページ」ボックスに範囲（例：「1-3, 5」）を指定して、特定のページのみを結合できます。",
+      "「ページ」ボックスを空にすると、そのファイルの全ページが含まれます。"
+    ],
+    "pageModeInstructions": [
+      "アップロードしたPDFのすべてのページが以下に表示されます。",
+      "サムネイルをドラッグ＆ドロップして、新しいファイルのページ順を自由に作成できます。"
+    ],
+    "mergePdfs": "PDFを結合する"
+  },
+  "common": {
+    "page": "ページ",
+    "pages": "ページ",
+    "of": "/",
+    "download": "ダウンロード",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "delete": "削除",
+    "edit": "編集",
+    "add": "追加",
+    "remove": "削除",
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "success": "成功",
+    "file": "ファイル",
+    "files": "ファイル",
+    "close": "閉じる"
+  },
+  "about": {
+    "hero": {
+      "title": "PDFツールは",
+      "subtitle": "高速、安全、そして無料であるべきだ。",
+      "noCompromises": "妥協はありません。"
+    },
+    "mission": {
+      "title": "私たちの使命",
+      "description": "プライバシーを尊重し、支払いを一切求めない、最も包括的なPDFツールボックスを提供すること。必須のドキュメントツールは、障壁なく、どこでも、誰でも利用できるべきだと信じています。"
+    },
+    "philosophy": {
+      "label": "私たちの哲学",
+      "title": "プライバシー第一。常に。",
+      "description": "データが商品とされる時代において、私たちは異なるアプローチを取ります。PDFツールのすべての処理はブラウザ内でローカルに行われます。ファイルが私たちのサーバーに触れることはなく、ドキュメントを見ることも、行動を追跡することもありません。ドキュメントは完全にプライベートなままです。これは単なる機能ではなく、私たちの基盤です。"
+    },
+    "whyBentopdf": {
+      "title": "選ばれる理由",
+      "speed": {
+        "title": "スピード重視",
+        "description": "サーバーへのアップロードやダウンロードを待つ必要はありません。WebAssemblyなどの最新技術を使用し、ブラウザ内で直接処理することで、比類のない速度を実現しています。"
+      },
+      "free": {
+        "title": "完全無料",
+        "description": "試用、サブスクリプション、隠れた費用、有料機能などは一切ありません。強力なPDFツールは利益の源ではなく、公共のインフラであるべきだと考えています。"
+      },
+      "noAccount": {
+        "title": "アカウント不要",
+        "description": "すぐにツールを利用できます。メールアドレス、パスワード、個人情報は不要。あなたのワークフローは匿名で、スムーズであるべきです。"
+      },
+      "openSource": {
+        "title": "オープンソース・スピリット",
+        "description": "透明性を重視して構築されています。PDF-libやPDF.jsなどの優れたオープンソースライブラリを活用し、コミュニティの力で強力なツールを誰もが利用できるようにすることを目指しています。"
+      }
+    },
+    "cta": {
+      "title": "始めましょう",
+      "description": "PDFツールを信頼する数千人のユーザーに加わりましょう。プライバシーとパフォーマンスがもたらす違いを体験してください。",
+      "button": "すべてのツールを見る"
+    }
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "ご質問、フィードバック、新機能のリクエストなど、お気軽にお問い合わせください。",
+    "email": "以下のメールアドレスまで直接ご連絡ください："
+  },
+  "licensing": {
+    "title": "ライセンス情報",
+    "subtitle": "ニーズに合ったライセンスを選択してください。"
+  },
+  "multiTool": {
+    "uploadPdfs": "PDFをアップロード",
+    "upload": "アップロード",
+    "addBlankPage": "白紙を追加",
+    "edit": "編集:",
+    "undo": "元に戻す",
+    "redo": "やり直し",
+    "reset": "リセット",
+    "selection": "選択:",
+    "selectAll": "すべて選択",
+    "deselectAll": "選択解除",
+    "rotate": "回転:",
+    "rotateLeft": "左回転",
+    "rotateRight": "右回転",
+    "transform": "変換:",
+    "duplicate": "複製",
+    "split": "分割",
+    "clear": "クリア:",
+    "delete": "削除",
+    "download": "ダウンロード:",
+    "downloadSelected": "選択項目をダウンロード",
+    "exportPdf": "PDFを書き出し",
+    "uploadPdfFiles": "PDFファイルを選択",
+    "dragAndDrop": "ファイルをドラッグ＆ドロップ、またはクリックして選択",
+    "selectFiles": "ファイルを選択",
+    "renderingPages": "ページを描画中...",
+    "actions": {
+      "duplicatePage": "このページを複製",
+      "deletePage": "このページを削除",
+      "insertPdf": "この後にPDFを挿入",
+      "toggleSplit": "この後で分割を切り替え"
+    },
+    "pleaseWait": "お待ちください",
+    "pagesRendering": "ページの描画を待っています...",
+    "noPagesSelected": "ページが選択されていません",
+    "selectOnePage": "ダウンロードするページを1つ以上選択してください。",
+    "noPages": "ページなし",
+    "noPagesToExport": "書き出すページがありません。",
+    "renderingTitle": "ページプレビューを生成中",
+    "errorRendering": "サムネイルの生成に失敗しました",
+    "error": "エラー",
+    "failedToLoad": "読み込み失敗"
+  },
+  "simpleMode": {
+    "title": "PDFツール",
+    "subtitle": "ツールを選択して開始してください"
+  }
+}
