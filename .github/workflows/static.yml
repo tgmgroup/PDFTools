@@ -52,6 +52,7 @@ jobs:
           #  export BASE_URL=${{ vars.BASE_URL }}/ 
           # export VITE_BRAND_LOGO=${{ vars.VITE_BRAND_LOGO }}
           # export VITE_BRAND_NAME=${{ vars.VITE_BRAND_NAME }}
+          # export VITE_FOOTER_TEXT=${{ vars.VITE_FOOTER_TEXT }}
           npm run build
 
       - name: Setup Pages
