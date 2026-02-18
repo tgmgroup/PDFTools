@@ -68,7 +68,7 @@ const PAGES = loadPages();
 
 function getBasePath(): string {
   // -- Original for subfolders -- // return (process.env.BASE_URL || '/').replace(/\/$/, '');
-  return /;
+  return (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/';
 }
 
 function createLanguageMiddleware(isDev: boolean): Connect.NextHandleFunction {
@@ -230,9 +230,17 @@ function flattenPagesPlugin(): Plugin {
 }
 
 function rewriteHtmlPathsPlugin(): Plugin {
-  const baseUrl = process.env.BASE_URL || '/';
-  const normalizedBase = baseUrl.replace(/\/?$/, '/');
+  // Original rewrite for subfolders: //
+  // const baseUrl = process.env.BASE_URL || '/';
+  // const normalizedBase = baseUrl.replace(/\/?$/, '/');
+  // const escapedBase = normalizedBase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
+  // New rewrite to handle subfolders and root deployments robustly:
+  // 1. Get the base, default to root
+  const baseUrl = process.env.BASE_URL || '/';
+  // 2. Ensure it starts with / and has NO double slashes
+  const normalizedBase = `/${baseUrl}/`.replace(/\/+/g, '/');
+  // 3. Keep this for the internal regex logic
   const escapedBase = normalizedBase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
   return {
@@ -286,13 +294,15 @@ export default defineConfig(() => {
   ];
 
   return {
-    base: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
+    // Original for subfolders // base: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
+    base: (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/',
     plugins: [
       // basicSsl(),
       handlebars({
         partialDirectory: resolve(__dirname, 'src/partials'),
         context: {
-          baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
+          // Original for subfolders // baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
+          baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/',
           simpleMode: process.env.SIMPLE_MODE === 'true',
           brandName: process.env.VITE_BRAND_NAME || '',
           brandLogo: process.env.VITE_BRAND_LOGO || '',
