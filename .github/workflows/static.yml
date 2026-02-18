@@ -32,7 +32,7 @@ env:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
-    # if: github.repository == 'alam00000/bentopdf'
+    #if: github.repository == 'alam00000/bentopdf'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -49,7 +49,7 @@ jobs:
       - name: Build distribution
         run: |
           # export SIMPLE_MODE=${{ vars.SIMPLE_MODE }}
-          # export BASE_URL=${{ vars.BASE_URL }} 
+          #  export BASE_URL=${{ vars.BASE_URL }}/ 
           # export VITE_BRAND_LOGO=${{ vars.VITE_BRAND_LOGO }}
           # export VITE_BRAND_NAME=${{ vars.VITE_BRAND_NAME }}
           npm run build

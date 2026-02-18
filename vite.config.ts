@@ -67,7 +67,8 @@ function loadPages(): Set<string> {
 const PAGES = loadPages();
 
 function getBasePath(): string {
-  return (process.env.BASE_URL || '/').replace(/\/$/, '');
+  // -- Original for subfolders -- // return (process.env.BASE_URL || '/').replace(/\/$/, '');
+  return /;
 }
 
 function createLanguageMiddleware(isDev: boolean): Connect.NextHandleFunction {
