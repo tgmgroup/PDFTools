@@ -45,13 +45,23 @@ export const getLanguageFromUrl = (): SupportedLanguage => {
   const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
   let path = window.location.pathname;
 
-  if (basePath && basePath !== '/' && path.startsWith(basePath)) {
-    path = path.slice(basePath.length) || '/';
+  // Original basePath check caused double // errors when basePath was '/' (root). We need to ensure we only slice if basePath is not empty and is a prefix of the path.
+  // if (basePath && basePath !== '/' && path.startsWith(basePath)) {
+  //  path = path.slice(basePath.length) || '/';
+  // }
+
+  // If basePath is just an empty string (root), we don't need to slice.
+  // Otherwise, we strip the basePath from the start of the URL.
+  if (basePath && path.startsWith(basePath)) {
+    path = path.slice(basePath.length);
   }
 
   if (!path.startsWith('/')) {
     path = '/' + path;
   }
+
+  // Normalize the remaining path: Ensure it starts with / and has no double slashes
+  path = path.replace(/\/+/g, '/');
 
   const langMatch = path.match(
     /^\/(en|ar|fr|es|de|ja|zh|zh-TW|vi|tr|id|it|pt|nl|be|da)(?:\/|$)/
