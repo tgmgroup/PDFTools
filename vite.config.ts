@@ -306,10 +306,6 @@ export default defineConfig(() => {
           baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/',
           simpleMode: process.env.SIMPLE_MODE === 'true',
 
-          // Original for subfolders // baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
-          baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/',
-          simpleMode: process.env.SIMPLE_MODE === 'true',
-
           // Original environment variables for branding and footer text
           // brandName: process.env.VITE_BRAND_NAME || '',
           // brandLogo: process.env.VITE_BRAND_LOGO || '',
