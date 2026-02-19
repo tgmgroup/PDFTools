@@ -522,7 +522,7 @@
   },
   "digitalSignPdf": {
     "name": "デジタル署名",
-    "pageTitle": "デジタル署名 PDF - 暗号化署名 | BentoPDF",
+    "pageTitle": "デジタル署名 PDF - 暗号化署名 | PDF Tools",
     "subtitle": "X.509証明書を使用して暗号化署名を追加。秘密鍵はブラウザ内のみで使用されます。",
     "certificateSection": "証明書",
     "uploadCert": "証明書をアップロード (.pfx, .p12)",
@@ -544,7 +544,7 @@
   },
   "validateSignaturePdf": {
     "name": "署名検証",
-    "pageTitle": "署名検証 - 整合性確認 | BentoPDF",
+    "pageTitle": "署名検証 - 整合性確認 | PDF Tools",
     "subtitle": "デジタル署名を検証し、完全性を確認します。ブラウザ内で処理されます。"
   },
   "emailToPdf": {
