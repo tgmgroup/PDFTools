@@ -55,16 +55,16 @@ Also, there are some issues with using Github's environment variables. You will 
 
 Use environment variables to add your own custom branding or edit the other options.
 
-| Variable                | Description                                           | Example                                            |
-| ----------------------- | ----------------------------------------------------- | -------------------------------------------------- |
-| `VITE_BRAND_NAME`       | Brand name shown in header and footer                 | `BentoPDF`                                         |
-| `VITE_BRAND_LOGO`       | Path to logo file relative to `public/`               | `/images/favicon-no-bg.svg`                        |
-| `VITE_FOOTER_TEXT`      | Custom footer/copyright text                          | `© 2026 BentoPDF. All rights reserved.`            |
-| `SIMPLE_MODE`           | Remove much of the "marketing fluff"                  | `Testimonials, extra tools, etc.`                  |
-| `BASE_URL`              | Set a subdirectory, or use `/` for the base/subdomain | `www.example.com/pdftools or pdftools.example.com` |
-| `VITE_DEFAULT_LANGUAGE` | Not everyone is an English speaker.                   | `ja`                                               |
+| Variable                | Description                                           | Example                                            | Status                        |
+| ----------------------- | ----------------------------------------------------- | -------------------------------------------------- | ----------------------------- |
+| `VITE_BRAND_NAME`       | Brand name shown in header and footer                 | `BentoPDF`                                         | Doesn't work well (hardcoded) |
+| `VITE_BRAND_LOGO`       | Path to logo file relative to `public/`               | `/images/favicon-no-bg.svg`                        | Doesn't work well (hardcoded) |
+| `VITE_FOOTER_TEXT`      | Custom footer/copyright text                          | `© 2026 BentoPDF. All rights reserved.`            | Doesn't work well (hardcoded) |
+| `SIMPLE_MODE`           | Remove much of the "marketing fluff"                  | `Testimonials, extra tools, etc.`                  | Doesn't work well (hardcoded) |
+| `BASE_URL`              | Set a subdirectory, or use `/` for the base/subdomain | `www.example.com/pdftools or pdftools.example.com` | Working                       |
+| `VITE_DEFAULT_LANGUAGE` | Not everyone is an English speaker.                   | `ja`                                               | Not tested                    |
 
-You will also probably want to edit the base HTML files to change the branding to something you'd prefer. The base environment variables do affect branding in many places, but there remain many places that they don't touch.
+You will also probably want to edit the base HTML files to change the branding to something you'd prefer. The base environment variables do affect branding in many places, but there remain many places that they don't touch. Also, there are still some apparent issues where the environment variables are not being read from GitHub, so the values were hardcoded into the `vite.config.ts` file.
 
 ## 🌍 Translations
 
