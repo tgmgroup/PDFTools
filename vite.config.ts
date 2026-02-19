@@ -305,9 +305,20 @@ export default defineConfig(() => {
           // Original for subfolders // baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
           baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/',
           simpleMode: process.env.SIMPLE_MODE === 'true',
-          brandName: process.env.VITE_BRAND_NAME || '',
-          brandLogo: process.env.VITE_BRAND_LOGO || '',
-          footerText: process.env.VITE_FOOTER_TEXT || '',
+
+          // Original for subfolders // baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
+          baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/',
+          simpleMode: process.env.SIMPLE_MODE === 'true',
+
+          // Original environment variables for branding and footer text
+          // brandName: process.env.VITE_BRAND_NAME || '',
+          // brandLogo: process.env.VITE_BRAND_LOGO || '',
+          //footerText: process.env.VITE_FOOTER_TEXT || '',
+
+          // Modified (hardcoded) environment variables for branding and footer text to fix some problems with variables not showing up in the final build. This is a temporary workaround until we can investigate the root cause.
+          brandName: 'PDF Tools',
+          brandLogo: '/images/logo.svg',
+          footerText: '&copy; by Isesaki English Media, courtesy of BentoPDF',
         },
       }),
       languageRouterPlugin(),
