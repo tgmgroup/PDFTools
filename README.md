@@ -12,10 +12,9 @@
 
 Please read **BentoPDF**'s documentation if you want to set up your own version of **BentoPDF**.
 
-[![BuyMeACoffee](https://img.shields.io/badge/Buy%20me%20a%20Coffee-yellow?logo=buymeacoffee&style=flat-square)](https://buymeacoffee.com/tgmgroup) ![Ko-fi](https://img.shields.io/badge/Buy%20me%20a%20Coffee-yellow?logo=kofi&style=flat-square)](https://ko-fi.com/tgmgroup) ![GitHub Stars](https://img.shields.io/github/stars/tgmgroup/pdftools?style=social)
-[![Sponsor me on GitHub](https://img.shields.io/badge/Sponsor-%E2%9D%A4-ff69b4)](https://github.com/sponsors/tgmgroup)
+[![BuyMeACoffee](https://img.shields.io/badge/Buy%20me%20a%20Coffee-yellow?logo=buymeacoffee&style=flat-square)](https://buymeacoffee.com/tgmgroup) [![Ko-fi](https://img.shields.io/badge/Buy%20me%20a%20Coffee-yellow?logo=kofi&style=flat-square)](https://ko-fi.com/tgmgroup) ![GitHub Stars](https://img.shields.io/github/stars/tgmgroup/pdftools?style=social) [![Sponsor me on GitHub](https://img.shields.io/badge/Sponsor-%E2%9D%A4-ff69b4)](https://github.com/sponsors/tgmgroup)
 
-![BentoPDF Tools](public/images/bentopdf-tools.png)
+![PDF Tools](public/images/bentopdf-tools.png)
 
 ---
 
