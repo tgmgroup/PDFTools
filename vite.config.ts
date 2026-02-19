@@ -314,7 +314,8 @@ export default defineConfig(() => {
           // Modified (hardcoded) environment variables for branding and footer text to fix some problems with variables not showing up in the final build. This is a temporary workaround until we can investigate the root cause.
           brandName: 'PDF Tools',
           brandLogo: '/images/logo.svg',
-          footerText: '&copy; by Isesaki English Media, courtesy of BentoPDF',
+          footerText:
+            'by <a href="https://isesaki.in">Isesaki English Media</a>, courtesy of <a href="https://bentopdf.com">BentoPDF</a>',
         },
       }),
       languageRouterPlugin(),

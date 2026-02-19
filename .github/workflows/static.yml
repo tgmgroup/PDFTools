@@ -21,13 +21,12 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-
 # Configure these variables under your repo settings.
 # You will likely need to set BASE_URL to be the name of your repo eg 'bentopdf'
 env:
   SIMPLE_MODE: ${{ vars.SIMPLE_MODE }}
-  BASE_URL: ${{ vars.BASE_URL }}/ 
-  HUSKY: 0 
+  BASE_URL: ${{ vars.BASE_URL }}/
+  HUSKY: 0
 
 jobs:
   # Single deploy job since we're just deploying
@@ -49,7 +48,7 @@ jobs:
       - name: Build distribution
         run: |
           # export SIMPLE_MODE=${{ vars.SIMPLE_MODE }}
-          #  export BASE_URL=${{ vars.BASE_URL }}/ 
+          # export BASE_URL=${{ vars.BASE_URL }}/ 
           # export VITE_BRAND_LOGO=${{ vars.VITE_BRAND_LOGO }}
           # export VITE_BRAND_NAME=${{ vars.VITE_BRAND_NAME }}
           # export VITE_FOOTER_TEXT=${{ vars.VITE_FOOTER_TEXT }}
@@ -68,4 +67,3 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages-deployment
-
