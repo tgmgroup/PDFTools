@@ -45,9 +45,9 @@ Visit **BentoPDF**'s [Documentation](https://bentopdf.com/docs/) for:
 
 ## 🚀 Static Hosting using Github Pages
 
-**BentoPDF** makes it easy to host things statically. However, it prefers to use subdirectories off a base domain (www.domain.com/bentopdf) instead of subdomains. This **PDF Tools** fork fixes the regexp code to allow hosting on sub or base domains. (pdftools.domain.com). The main change is this code:
-`// Original Code // return (process.env.BASE_URL || '/').replace(/\/$/, '');`
-`// Modified Code // return (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/';`
+**BentoPDF** makes it easy to host things statically. However, it prefers to use subdirectories off a base domain (www.domain.com/bentopdf) instead of subdomains. This **PDF Tools** fork fixes the regexp code to allow hosting on sub or base domains. (pdftools.domain.com). The main change is that this original code: `// Original Code // return (process.env.BASE_URL || '/').replace(/\/$/, '');`
+now becomes: `// Modified Code // return (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/';`
+
 Search for BaseURL and you'll find multiple instances of this kind of code. You will have to edit `vite.config.ts` and `i18n.ts` at the least.
 
 Also, there are some issues with using Github's environment variables. You will have to do a CTRL+F search to replace all the BentoPDF branding. See the original documentation ([Static Hosting](https://github.com/alam00000/bentopdf/blob/main/STATIC-HOSTING.md)) for the basic procedures.
@@ -58,7 +58,7 @@ Also, there are some issues with using Github's environment variables. You will 
 
 Use environment variables to add your own custom branding or edit the other options.
 
-| Variable                | Description                                           | Default                                            |
+| Variable                | Description                                           | Example                                            |
 | ----------------------- | ----------------------------------------------------- | -------------------------------------------------- |
 | `VITE_BRAND_NAME`       | Brand name shown in header and footer                 | `BentoPDF`                                         |
 | `VITE_BRAND_LOGO`       | Path to logo file relative to `public/`               | `images/favicon-no-bg.svg`                         |
@@ -71,8 +71,9 @@ You will also probably want to edit the base HTML files to change the branding t
 
 ## 🌍 Translations
 
-**BentoPDF** is available in multiple languages: `en|ar|fr|es|de|zh|zh-TW|vi|tr|id|it|pt|nl|be|da`
-**PDF Tools** adds `ja` to this. Edit the files in `public/locales` and the `i18n.ts` file in `src/js/i18n` to add more languages.
+**BentoPDF** is available in multiple languages: `en|ar|fr|es|de|zh|zh-TW|vi|tr|id|it|pt|nl|be|da`. **PDF Tools** adds `ja` to this. Edit the files in `public/locales` and the `i18n.ts` file in `src/js/i18n` to add more languages.
+
+There's also a Google Translate Language Bar added to the footers that may or may not pop up.
 
 ---
 
