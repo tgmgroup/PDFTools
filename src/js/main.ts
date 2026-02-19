@@ -82,7 +82,7 @@ const init = async () => {
         (divider as HTMLElement).style.display = 'none';
       });
 
-      const brandName = __BRAND_NAME__ || 'BentoPDF';
+      const brandName = __BRAND_NAME__ || 'PDF Tools';
       document.title = `${brandName} - ${t('simpleMode.title')}`;
 
       const toolsHeader = document.getElementById('tools-header');
