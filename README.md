@@ -55,20 +55,20 @@ Also, there are some issues with using Github's environment variables. You will 
 
 Use environment variables to add your own custom branding or edit the other options.
 
-| Variable                | Description                                           | Example                                            | Status                        |
-| ----------------------- | ----------------------------------------------------- | -------------------------------------------------- | ----------------------------- |
-| `VITE_BRAND_NAME`       | Brand name shown in header and footer                 | `BentoPDF`                                         | Doesn't work well (hardcoded) |
-| `VITE_BRAND_LOGO`       | Path to logo file relative to `public/`               | `/images/favicon-no-bg.svg`                        | Doesn't work well (hardcoded) |
-| `VITE_FOOTER_TEXT`      | Custom footer/copyright text                          | `© 2026 BentoPDF. All rights reserved.`            | Doesn't work well (hardcoded) |
-| `SIMPLE_MODE`           | Remove much of the "marketing fluff"                  | `Testimonials, extra tools, etc.`                  | Doesn't work well (hardcoded) |
-| `BASE_URL`              | Set a subdirectory, or use `/` for the base/subdomain | `www.example.com/pdftools or pdftools.example.com` | Working, with caveats         |
-| `VITE_DEFAULT_LANGUAGE` | Not everyone is an English speaker.                   | `ja`                                               | Not tested                    |
+| Variable                | Description                                           | Example                                              | Status                        |
+| ----------------------- | ----------------------------------------------------- | ---------------------------------------------------- | ----------------------------- |
+| `VITE_BRAND_NAME`       | Brand name shown in header and footer                 | `BentoPDF`                                           | Doesn't work well (hardcoded) |
+| `VITE_BRAND_LOGO`       | Path to logo file relative to `public/`               | `/images/favicon-no-bg.svg`                          | Doesn't work well (hardcoded) |
+| `VITE_FOOTER_TEXT`      | Custom footer/copyright text                          | `© 2026 BentoPDF. All rights reserved.`              | Doesn't work well (hardcoded) |
+| `SIMPLE_MODE`           | Remove much of the "marketing fluff"                  | `Testimonials, extra tools, etc.`                    | Doesn't work well (hardcoded) |
+| `BASE_URL`              | Set a subdirectory, or use `/` for the base/subdomain | `www.example.com/pdftools` or `pdftools.example.com` | Working, with caveats         |
+| `VITE_DEFAULT_LANGUAGE` | Not everyone is an English speaker.                   | `ja`                                                 | Not tested                    |
 
 You will also probably want to edit the base HTML files to change the branding to something you'd prefer. The base environment variables do affect branding in many places, but there remain many places that they don't touch. Also, there are still some apparent issues where the environment variables are not being read from GitHub, so the values were hardcoded into the `vite.config.ts` file and in some of the html files.
 
 ## 🌍 Translations
 
-**BentoPDF** is available in multiple languages: `en|ar|fr|es|de|zh|zh-TW|vi|tr|id|it|pt|nl|be|da`. **PDF Tools** adds `ja` to this. Edit the files in `public/locales` and the `i18n.ts` file in `src/js/i18n` to add more languages.
+**BentoPDF** is available in multiple languages: `en|ar|fr|es|de|zh|zh-TW|vi|tr|id|it|pt|nl|be|da`. **PDF Tools** adds `ja` to this. Edit the files in `public/locales` and the `i18n.ts` file in `src/js/i18n`, as well as the main `vite.config.ts` file, to add more languages.
 
 There's also a Google Translate Language Bar added to the footers that may or may not pop up.
 
@@ -79,7 +79,7 @@ There's also a Google Translate Language Bar added to the footers that may or ma
 
 ## Special Thanks
 
-A big thanks to [Alam00000](https://github.com/alam00000/bentopdf/) and his **BentoPDF**. Also, thanks to all the work he's built on to make this happen:
+A big thanks to **[Alam00000](https://github.com/alam00000/bentopdf/)** and his **BentoPDF**. Also, thanks to all the work he's built on to make this happen:
 
 **Bundled Libraries:**
 
