@@ -311,7 +311,6 @@ export default defineConfig(() => {
           // This ensures that if BASE_URL is '/', baseUrl becomes an empty string
           // This prevents things like {{baseUrl}}/ja/ from becoming //ja/
           baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, ''),
-          domainUrl: 
 
           simpleMode: process.env.SIMPLE_MODE === 'true',
 
