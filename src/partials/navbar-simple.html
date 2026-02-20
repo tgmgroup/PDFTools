@@ -20,11 +20,20 @@
             >{{#if brandName}}{{brandName}}{{else}}BentoPDF{{/if}}</a
           >-->
 
-          <a href="index.html"
+          <!-- // Modification 1 -- // <a href="index.html"
             >{{#if brandName}}{{brandName}}{{else}}BentoPDF{{/if}}</a
           >
+        </span> -->
+
+        <!-- // Modification 2 -- Use a relative link to index.html to ensure it works correctly regardless of the base URL or language path. This prevents issues where {{baseUrl}} might add an extra slash or cause incorrect paths in translated versions. -->
+        <span id="nav-brand" class="text-white font-bold text-xl ml-2">
+        <a href="{{#if baseUrl}}{{baseUrl}}{{/if}}/">
+          {{#if brandName}}{{brandName}}{{else}}BentoPDF{{/if}}
+          </a>
         </span>
+        
       </div>
     </div>
   </div>
+  <div id="simple-mode-lang-switcher" class="flex-shrink-0"></div>
 </nav>
