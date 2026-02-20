@@ -310,7 +310,8 @@ export default defineConfig(() => {
           // -- Modification 2 -- Normalize BASE_URL: ensure it starts with a single slash, has no double slashes, and defaults to root if empty
           // This ensures that if BASE_URL is '/', baseUrl becomes an empty string
           // This prevents things like {{baseUrl}}/ja/ from becoming //ja/
-          // baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, ''),
+          // -- Final Note -- This baseURL should be a domain to fix errors with the translation pages going to empty domains "/ja/" instead of "domain.com/ja/", so update your environment variable accordingly to "https://example.com/" with the trailing slash. This will cause issues with development, however.
+          baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, ''),
 
           simpleMode: process.env.SIMPLE_MODE === 'true',
 
@@ -324,9 +325,6 @@ export default defineConfig(() => {
           brandLogo: '/images/logo.svg',
           footerText:
             'by <a href="https://isesaki.in">Isesaki English Media</a>, courtesy of <a href="https://bentopdf.com">BentoPDF</a>',
-
-          // Hardcode base domain just in case //
-          baseUrl: 'https://pdftools.isesaki.in/',
         },
       }),
       languageRouterPlugin(),
