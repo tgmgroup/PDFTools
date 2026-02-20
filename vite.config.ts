@@ -309,7 +309,7 @@ export default defineConfig(() => {
           // Original environment variables for branding and footer text
           // brandName: process.env.VITE_BRAND_NAME || '',
           // brandLogo: process.env.VITE_BRAND_LOGO || '',
-          // footerText: process.env.VITE_FOOTER_TEXT || '',
+          //footerText: process.env.VITE_FOOTER_TEXT || '',
 
           // Modified (hardcoded) environment variables for branding and footer text to fix some problems with variables not showing up in the final build. This is a temporary workaround until we can investigate the root cause.
           brandName: 'PDF Tools',
