@@ -114,7 +114,12 @@ export const initI18n = async (): Promise<typeof i18next> => {
       // Modified -- Use the normalized basePath and append /locales
       // If basePath is empty (subdomain), it results in "/locales/..."
       // If basePath is "/pdf", it results in "/pdf/locales/..."
-      loadPath: `${basePath}/locales/{{lng}}/{{ns}}.json`.replace(/\/+/g, '/'),
+      //loadPath: `${basePath}/locales/{{lng}}/{{ns}}.json`.replace(/\/+/g, '/'),
+      // This regex replaces double slashes ONLY if they aren't preceded by a colon (protocol)
+      loadPath: `${basePath}/locales/{{lng}}/{{ns}}.json`.replace(
+        /([^:])\/+/g,
+        '$1/'
+      ),
     },
     interpolation: {
       escapeValue: false,
