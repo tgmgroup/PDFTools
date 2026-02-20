@@ -69,7 +69,10 @@ const PAGES = loadPages();
 
 function getBasePath(): string {
   // -- Original for subfolders -- // return (process.env.BASE_URL || '/').replace(/\/$/, '');
-  return (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/';
+  // -- Modification 1 -- // return (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/';
+  // -- Modification 2 -- Normalize BASE_URL: ensure it starts with a single slash, has no double slashes, and defaults to root if empty
+  const base = (process.env.BASE_URL || '/').replace(/\/+$/, '');
+  return base === '' ? '' : base;
 }
 
 function createLanguageMiddleware(isDev: boolean): Connect.NextHandleFunction {
@@ -302,20 +305,29 @@ export default defineConfig(() => {
       handlebars({
         partialDirectory: resolve(__dirname, 'src/partials'),
         context: {
-          // Original for subfolders // baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
-          baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/',
+          // -- Original for subfolders -- // baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
+          // -- Modification 1 -- //baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/',
+          // -- Modification 2 -- Normalize BASE_URL: ensure it starts with a single slash, has no double slashes, and defaults to root if empty
+          // This ensures that if BASE_URL is '/', baseUrl becomes an empty string
+          // This prevents things like {{baseUrl}}/ja/ from becoming //ja/
+          baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, ''),
+          domainUrl: 
+
           simpleMode: process.env.SIMPLE_MODE === 'true',
 
           // Original environment variables for branding and footer text
           // brandName: process.env.VITE_BRAND_NAME || '',
           // brandLogo: process.env.VITE_BRAND_LOGO || '',
-          //footerText: process.env.VITE_FOOTER_TEXT || '',
+          // footerText: process.env.VITE_FOOTER_TEXT || '',
 
           // Modified (hardcoded) environment variables for branding and footer text to fix some problems with variables not showing up in the final build. This is a temporary workaround until we can investigate the root cause.
           brandName: 'PDF Tools',
           brandLogo: '/images/logo.svg',
           footerText:
             'by <a href="https://isesaki.in">Isesaki English Media</a>, courtesy of <a href="https://bentopdf.com">BentoPDF</a>',
+
+          // Hardcode base domain just in case //
+          domainUrl: 'https://pdftools.isesaki.in',
         },
       }),
       languageRouterPlugin(),

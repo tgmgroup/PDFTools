@@ -98,6 +98,9 @@ export const initI18n = async (): Promise<typeof i18next> => {
 
   localStorage.setItem('i18nextLng', currentLang);
 
+  // Normalize BASE_URL: remove the trailing slash entirely
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+
   await i18next.use(HttpBackend).init({
     lng: currentLang,
     fallbackLng: 'en',
@@ -106,7 +109,12 @@ export const initI18n = async (): Promise<typeof i18next> => {
     defaultNS: 'common',
     preload: [currentLang],
     backend: {
-      loadPath: `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}locales/{{lng}}/{{ns}}.json`,
+      // Original Code // loadPath: `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}locales/{{lng}}/{{ns}}.json`,
+
+      // Modified -- Use the normalized basePath and append /locales
+      // If basePath is empty (subdomain), it results in "/locales/..."
+      // If basePath is "/pdf", it results in "/pdf/locales/..."
+      loadPath: `${basePath}/locales/{{lng}}/{{ns}}.json`.replace(/\/+/g, '/'),
     },
     interpolation: {
       escapeValue: false,
@@ -123,7 +131,8 @@ export const t = (key: string, options?: Record<string, unknown>): string => {
   return i18next.t(key, options);
 };
 
-export const changeLanguage = (lang: SupportedLanguage): void => {
+/********************* Original Code for language switcher *********************/
+/* export const changeLanguage = (lang: SupportedLanguage): void => {
   if (!supportedLanguages.includes(lang)) return;
   localStorage.setItem('i18nextLng', lang);
 
@@ -168,6 +177,44 @@ export const changeLanguage = (lang: SupportedLanguage): void => {
 
   const newUrl = newPath + window.location.search + window.location.hash;
   window.location.href = newUrl;
+}; */
+
+/********** Modified Code for language switcher to fix empty domain errors **********/
+export const changeLanguage = (lang: SupportedLanguage): void => {
+  if (!supportedLanguages.includes(lang)) return;
+  localStorage.setItem('i18nextLng', lang);
+
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+  let pathname = window.location.pathname;
+
+  // 1. Remove basePath prefix
+  if (basePath && pathname.startsWith(basePath)) {
+    pathname = pathname.slice(basePath.length) || '/';
+  }
+
+  // 2. Remove any existing language prefix (e.g., /ja/tools -> /tools)
+  const langRegex = new RegExp(`^/(${supportedLanguages.join('|')})(?:/|$)`);
+  let cleanPath = pathname.replace(langRegex, '/');
+
+  // Ensure cleanPath starts with a single slash
+  cleanPath = ('/' + cleanPath).replace(/\/+/g, '/');
+
+  // 3. Construct new path
+  let newPath: string;
+  if (lang === 'en') {
+    newPath = `${basePath}${cleanPath}`;
+  } else {
+    // If cleanPath is just "/", we don't want to end up with "/ja/"
+    // unless the server expects directory indexing.
+    newPath = `${basePath}/${lang}${cleanPath}`;
+  }
+
+  // 4. Final Cleanup: Collapse double slashes and remove trailing slash
+  // But keep "/" if the path is empty
+  const finalPath = newPath.replace(/\/+/g, '/').replace(/\/$/, '') || '/';
+
+  window.location.href =
+    finalPath + window.location.search + window.location.hash;
 };
 
 // Apply translations to all elements with data-i18n attribute
@@ -206,7 +253,8 @@ export const applyTranslations = (): void => {
   document.documentElement.dir = i18next.language === 'ar' ? 'rtl' : 'ltr';
 };
 
-export const rewriteLinks = (): void => {
+/********************* Original Code for link rewriter *********************/
+/* export const rewriteLinks = (): void => {
   const currentLang = getLanguageFromUrl();
   if (currentLang === 'en') return;
 
@@ -262,6 +310,50 @@ export const rewriteLinks = (): void => {
     newHref = newHref.replace(/([^:])\/+/g, '$1/');
 
     link.setAttribute('href', newHref);
+  });
+}; */
+
+/********************* Modified Code for link rewriter *********************/
+export const rewriteLinks = (): void => {
+  const currentLang = getLanguageFromUrl();
+  if (currentLang === 'en') return;
+
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+  const links = document.querySelectorAll('a[href]');
+
+  links.forEach((link) => {
+    let href = link.getAttribute('href');
+    if (!href) return;
+
+    // Skip external links, anchors, etc.
+    if (/^(http|https|\/\/|mailto|tel|#|javascript:)/.test(href)) return;
+    if (href.includes('/assets/')) return;
+
+    // Skip if already has language prefix
+    const langPrefixRegex = new RegExp(
+      `^(${basePath})?/?(${supportedLanguages.join('|')})(/|$)`
+    );
+    if (langPrefixRegex.test(href)) return;
+
+    let newHref: string;
+
+    // Handle "index.html" or empty strings specifically to point to the directory root
+    if (href === 'index.html' || href === '' || href === './') {
+      href = '/';
+    }
+
+    // Standardize pathing
+    if (basePath && href.startsWith(basePath)) {
+      const pathAfterBase = href.slice(basePath.length) || '/';
+      newHref = `${basePath}/${currentLang}/${pathAfterBase}`;
+    } else {
+      // Root relative or relative
+      const prefix = href.startsWith('/') ? '' : '/';
+      newHref = `${basePath}/${currentLang}${prefix}${href}`;
+    }
+
+    // Clean up double slashes: collapse // but don't touch :// (for protocol safety)
+    link.setAttribute('href', newHref.replace(/([^:])\/+/g, '$1/'));
   });
 };
 
