@@ -310,7 +310,7 @@ export default defineConfig(() => {
           // -- Modification 2 -- Normalize BASE_URL: ensure it starts with a single slash, has no double slashes, and defaults to root if empty
           // This ensures that if BASE_URL is '/', baseUrl becomes an empty string
           // This prevents things like {{baseUrl}}/ja/ from becoming //ja/
-          baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, ''),
+          // baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, ''),
 
           simpleMode: process.env.SIMPLE_MODE === 'true',
 
@@ -326,7 +326,7 @@ export default defineConfig(() => {
             'by <a href="https://isesaki.in">Isesaki English Media</a>, courtesy of <a href="https://bentopdf.com">BentoPDF</a>',
 
           // Hardcode base domain just in case //
-          domainUrl: 'https://pdftools.isesaki.in',
+          baseUrl: 'https://pdftools.isesaki.in/',
         },
       }),
       languageRouterPlugin(),
