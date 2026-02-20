@@ -61,10 +61,14 @@
               class="h-8 w-8"
             />
             <span class="text-white font-bold text-xl ml-2">
-              <a href="{{baseUrl}}index.html"
+              <!-- <a href="{{baseUrl}}index.html"
+                >{{#if brandName}}{{brandName}}{{else}}BentoPDF{{/if}}</a
+              > -->
+              <!-- The original was 'a href="/"'' which lead to navigation errors -->
+              <!-- Modified hardcoded nuclear option that prevents breaking errors with the translation function -->
+              <a href="https://pdftools.isesaki.in"
                 >{{#if brandName}}{{brandName}}{{else}}BentoPDF{{/if}}</a
               >
-              <!-- The original was 'a href="/"'' which lead to navigation errors -->
             </span>
           </div>
         </div>
