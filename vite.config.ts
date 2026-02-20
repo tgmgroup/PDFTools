@@ -69,10 +69,7 @@ const PAGES = loadPages();
 
 function getBasePath(): string {
   // -- Original for subfolders -- // return (process.env.BASE_URL || '/').replace(/\/$/, '');
-  // -- Modification 1 -- // return (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/';
-  // -- Modification 2 -- Normalize BASE_URL: ensure it starts with a single slash, has no double slashes, and defaults to root if empty
-  const base = (process.env.BASE_URL || '/').replace(/\/+$/, '');
-  return base === '' ? '' : base;
+  return (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/';
 }
 
 function createLanguageMiddleware(isDev: boolean): Connect.NextHandleFunction {
@@ -305,14 +302,8 @@ export default defineConfig(() => {
       handlebars({
         partialDirectory: resolve(__dirname, 'src/partials'),
         context: {
-          // -- Original for subfolders -- // baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
-          // -- Modification 1 -- //baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/',
-          // -- Modification 2 -- Normalize BASE_URL: ensure it starts with a single slash, has no double slashes, and defaults to root if empty
-          // This ensures that if BASE_URL is '/', baseUrl becomes an empty string
-          // This prevents things like {{baseUrl}}/ja/ from becoming //ja/
-          // -- Final Note -- This baseURL should be a domain to fix errors with the translation pages going to empty domains "/ja/" instead of "domain.com/ja/", so update your environment variable accordingly to "https://example.com/" with the trailing slash. This will cause issues with development, however.
-          baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, ''),
-
+          // Original for subfolders // baseUrl: (process.env.BASE_URL || '/').replace(/\/?$/, '/'),
+          baseUrl: (process.env.BASE_URL || '/').replace(/\/+$/, '') || '/',
           simpleMode: process.env.SIMPLE_MODE === 'true',
 
           // Original environment variables for branding and footer text

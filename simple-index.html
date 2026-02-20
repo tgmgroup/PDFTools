@@ -61,12 +61,13 @@
               class="h-8 w-8"
             />
             <span class="text-white font-bold text-xl ml-2">
-              <a href="index.html"
+              <a href="{{baseUrl}}index.html"
                 >{{#if brandName}}{{brandName}}{{else}}BentoPDF{{/if}}</a
               >
               <!-- The original was 'a href="/"'' which lead to navigation errors -->
             </span>
           </div>
+          <div id="simple-mode-lang-switcher" class="flex-shrink-0"></div>
         </div>
       </div>
     </nav>
@@ -479,7 +480,6 @@
               Version <span id="app-version-simple"></span>
             </p>
           </div>
-          <div id="simple-mode-lang-switcher" class="flex-shrink-0"></div>
         </div>
       </div>
     </footer>
